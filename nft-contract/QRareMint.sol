@@ -6,9 +6,12 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+// import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract QRareMint is ERC721, ERC721URIStorage, Ownable {
+contract QRareMint is ERC721, ERC721URIStorage {
+
+    error QRareMint__OnlyOneMintAllowed();
+
     uint256 private _nextTokenId;
 
     string constant DESCRIPTION =
@@ -16,15 +19,19 @@ contract QRareMint is ERC721, ERC721URIStorage, Ownable {
 
     // Mapping to store base64 SVG data for each token
     mapping(uint256 => string) private _tokenSVGs;
+    mapping(address => bool) private _isMinted;
 
-    constructor(
-        address initialOwner
-    ) ERC721("QRareMint", "QRM") Ownable(initialOwner) {}
+    constructor() ERC721("QRareMint", "QRM") {}
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    modifier isMinted{
+        require(!_isMinted[_msgSender()],QRareMint__OnlyOneMintAllowed());
+        _;
+    }
+
+    function safeMint(string memory uri) public isMinted {
         uint256 tokenId = _nextTokenId++;
-
-        _safeMint(to, tokenId);
+        _isMinted[_msgSender()] = true;
+        _safeMint(_msgSender(), tokenId);
         _tokenSVGs[tokenId] = uri;
         // _setTokenURI(tokenId, uri);
     }
