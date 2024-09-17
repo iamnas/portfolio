@@ -19,7 +19,7 @@ contract QRareMint is ERC721, ERC721URIStorage {
 
     // Mapping to store base64 SVG data for each token
     mapping(uint256 => string) private _tokenSVGs;
-    mapping(address => bool) private _isMinted;
+    mapping(address => bool) public _isMinted;
 
     constructor() ERC721("QRareMint", "QRM") {}
 

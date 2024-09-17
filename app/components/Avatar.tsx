@@ -43,16 +43,18 @@ export const Avatar = () => {
             >
                 <div className="relative flex items-center justify-center">
                     {address && (
+                        // <div
+                        //     className={`absolute inset-0 flex items-center justify-center animate-spin-slow ${isOpen ? 'animate-spin' : ''
+                        //         }`}
+                        //     style={{ animation: `${spin} infinite 2.5s paused linear` }}
+                        // >
                         <div
-                            className={`absolute inset-0 flex items-center justify-center animate-spin-slow ${isOpen ? 'animate-spin' : ''
-                                }`}
+                            className={`absolute inset-0 flex items-center justify-center animate-spin-slow animate-spin`}
                             style={{ animation: `${spin} infinite 2.5s paused linear` }}
                         >
                             <Image
                                 alt='QRareMint'
                                 className="absolute w-full lg:w-[135%] max-w-none"
-                                // width={500}
-                                // height={500}
                                 src={blurs}
                                 role="presentation"
                                 style={{ animation: `${spin} infinite 5s linear` }}
@@ -61,8 +63,6 @@ export const Avatar = () => {
                     )}
                     <Image
                         className="rounded-full w-[80%] lg:w-full"
-                        // width={500}
-                        // height={500}
                         src={profilePic}
                         alt="QRareMint"
                     />

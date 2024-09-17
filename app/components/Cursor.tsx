@@ -1,9 +1,9 @@
 'use client'
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useEnsName, useEnsAvatar, useAccount } from 'wagmi';
 import { useMouse, useWindowSize } from 'react-use';
 import { trimAddress } from '../utils/address';
-import Image from 'next/image'
+import Image from 'next/image';
 
 const Cursor = () => {
     const [hasMounted, setMounted] = useState(false);
@@ -12,7 +12,7 @@ const Cursor = () => {
     const { data: ensName } = useEnsName({ address });
     const { data: ensAvatar } = useEnsAvatar({ name: address || "" });
     const [isVisible, setVisibility] = useState(false);
-    const boxRef = useRef();
+    const boxRef = React.useRef(null);
     const { elX, elY } = useMouse(boxRef);
     const isMobile = width <= 768;
 
@@ -26,6 +26,7 @@ const Cursor = () => {
         }
     }, [elX, elY, boxRef]);
 
+
     if (isMobile || !address || !hasMounted) return null;
 
     return (
@@ -34,8 +35,7 @@ const Cursor = () => {
             className="fixed top-0 left-0 w-full h-full pointer-events-none z-[9999] text-white text-sm uppercase"
         >
             <div
-                className={`absolute flex items-center bg-white text-black rounded-xl shadow-md font-semibold px-3 py-1 transform ${isVisible ? 'opacity-100' : 'opacity-0'
-                    }`}
+                className={`absolute flex items-center bg-white text-black rounded-xl shadow-md font-semibold px-3 py-1 transform transition-opacity duration-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                 style={{
                     transform: `translate(${elX + 5}px, ${elY + 20}px)`,
                 }}
@@ -45,6 +45,8 @@ const Cursor = () => {
                         className="w-4 h-4 rounded-full mr-2"
                         src={ensAvatar}
                         alt={address}
+                        width={16}
+                        height={16}
                     />
                 )}
                 {ensName || trimAddress(address)}
