@@ -83,7 +83,37 @@ export default function Home() {
           <MiniHeader title="Side Projects" />
           {/* <h2 className="text-xl mt-14 mb-10">Side Projects</h2> */}
 
-          
+          <Experience
+            href="https://t.me/jest_test_Whale_bot"
+            side="ongoing"
+            title="SolanaWhaleWatch - Real-Time Token Updates"
+            desc="Stay ahead with real-time Solana token updates! Get insights on top tokens, newly listed ones, and whale alerts. Perfect for traders and enthusiasts."
+            stack="Top Tokens • Token Information • Create Wallet • Newly Listed"
+          />
+          <Experience
+            href="https://webwallet-chi.vercel.app/"
+            // image="/offline-favicon.png"
+            side="ongoing"
+            title="Web Based Wallet"
+            desc="Crypto Wallet Web Application"
+            stack="React • TypeScript • Solana • EVM"
+          />
+          {/* <Experience
+            // image="/tamiko.svg"
+            side="Paused"
+            title="Tamiko"
+            desc="Tamiko are non-fungible friends that live completely on-chain. You can hatch, feed, breed and evolve them."
+            stack="Solidity • ERC721 • ERC1155 • Next.js"
+          />
+          <Experience
+            href="https://kineticspectru.ms/"
+            // image="/kineticspectrum.png"
+            side="2022"
+            title="Kinetic Spectrums"
+            desc="Generative on-chain NFTs. A collection of dynamic, ever changing artworks."
+            stack="Solidity • ERC721 • Next.js"
+          /> */}
+
           <MiniHeader title="Links" />
           {/* <h2 className="text-xl mt-14 mb-10"></h2> */}
 
