@@ -66,7 +66,7 @@ export default function Home() {
           <Experience
             href="https://thefastway.in/"
             side="2023 – 2023"
-            title="Backend End Engineer – TheFaseWay"
+            title="Backend End Engineer – TheFastWay"
             desc="Developed a secure and compliant private sale launchpad smart contract for the BIPZY project, ensuring
                 transparent token sales and robust security measures."
             stack="Solidity • Nodejs • Adonisjs • Nestjs • Prisma"
