@@ -6,7 +6,6 @@ import { Experience } from "./components/Experience";
 export default function Home() {
   return (
     <>
-
       <Cursor />
 
       <div className="py-[115px] px-4 max-w-[500px] mx-auto">
@@ -84,20 +83,30 @@ export default function Home() {
           {/* <h2 className="text-xl mt-14 mb-10">Side Projects</h2> */}
 
           <Experience
-            href="https://t.me/jest_test_Whale_bot"
-            side="ongoing"
-            title="SolanaWhaleWatch - Real-Time Token Updates"
-            desc="Stay ahead with real-time Solana token updates! Get insights on top tokens, newly listed ones, and whale alerts. Perfect for traders and enthusiasts."
-            stack="Top Tokens • Token Information • Create Wallet • Newly Listed"
+            href="https://aistudiogen.vercel.app"
+            side="Ongoing"
+            title="AI Studio - Real-Time Image Generation"
+            desc="AI Studio is an AI-powered image generation platform built with Next.js. It enables users to create images using generative AI models, offering a user-friendly tool for creators and artists."
+            stack="Next.js • TailwindCSS • AI • Generative Models"
           />
+
           <Experience
             href="https://webwallet-chi.vercel.app/"
             // image="/offline-favicon.png"
-            side="ongoing"
+            side="Ongoing"
             title="Web Based Wallet"
             desc="Crypto Wallet Web Application"
             stack="React • TypeScript • Solana • EVM"
           />
+
+          <Experience
+            href="https://t.me/jest_test_Whale_bot"
+            side="Ongoing"
+            title="SolanaWhaleWatch - Real-Time Token Updates"
+            desc="Stay ahead with real-time Solana token updates! Get insights on top tokens, newly listed ones, and whale alerts. Perfect for traders and enthusiasts."
+            stack="Top Tokens • Token Information • Create Wallet • Newly Listed"
+          />
+
           {/* <Experience
             // image="/tamiko.svg"
             side="Paused"
