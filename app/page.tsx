@@ -82,6 +82,16 @@ export default function Home() {
           <MiniHeader title="Side Projects" />
           {/* <h2 className="text-xl mt-14 mb-10">Side Projects</h2> */}
 
+
+          <Experience
+            href="https://mamora.chat"
+            side="Ongoing"
+            title="Mamora Chat - Solana-Powered Chatbot"
+            desc="Mamora Chat is an innovative Solana-based chatbot platform built with Next.js. It leverages blockchain technology to provide secure, efficient, and interactive chat experiences tailored for modern users."
+            stack="Next.js • TailwindCSS • Solana • Chatbot"
+          />
+
+
           <Experience
             href="https://aistudiogen.vercel.app"
             side="Ongoing"
